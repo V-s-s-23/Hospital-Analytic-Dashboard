@@ -1,0 +1,51 @@
+Created Dax Measures-
+
+1. Unrefered_patients
+
+ VAR _URP = 
+        CALCULATE([Total patients],'Patients Data'[department_referral] = "none")
+
+        RETURN
+        DIVIDE(_URP,[Total patients])
+
+2. Reffered_patients
+ 
+Reffered_patients = 
+  VAR _RP = 
+        CALCULATE([Total patients],'Patients Data'[department_referral] <> "none")
+
+        RETURN
+        DIVIDE(_RP,[Total patients])
+
+3. Average Satisfaction Score
+
+Avg_satisfaction_score = CALCULATE(
+     AVERAGE('Patients Data'[patient_sat_score]),
+            'Patients Data'[patient_sat_score]<>BLANK())
+
+4. Average Satisfaction Score
+
+Avg_satisfaction_score = CALCULATE(
+     AVERAGE('Patients Data'[patient_sat_score]),
+            'Patients Data'[patient_sat_score]<>BLANK())
+
+5. To Found Out Maximum and Minimum Patients Visits
+
+CF max patients(month) = 
+       VAR _PatientsaTable =
+         CALCULATETABLE(
+            ADDCOLUMNS(
+                SUMMARIZE('Date','Date'[Month]),
+                "@Total_Patients",[Total patients]
+            ),
+            ALLSELECTED()
+         )
+
+        VAR _MinValue = MINX(_PatientsaTable,[@Total_Patients])
+        VAR _MaxValue = MAXX(_PatientsaTable,[@Total_Patients])
+        VAR _TotalPatients = [Total patients]
+        RETURN
+        SWITCH(
+            TRUE(),
+            _TotalPatients = _MinValue,0,
+            _TotalPatients = _MaxValue,1
