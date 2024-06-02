@@ -3,6 +3,9 @@
 ## Overview
 This project involves creating a Power BI dashboard to analyze various aspects of patient visits and satisfaction. The dashboard provides insights into the average waiting time, monthly patient visits, departmental referrals, age group breakdowns, and satisfaction scores.
 
+![Dashboard-2](https://github.com/V-s-s-23/Hospital-Analytic-Dashboard/assets/103623927/dce6fd66-03b1-4fc4-be51-42617204b87d)
+
+
 ## Insights Extracted
 - **Average Waiting Time**: Evaluates the average waiting time of patients.
 - **Monthly Patient Visits**: Tracks the number of patient visits each month.
@@ -22,4 +25,4 @@ This project involves creating a Power BI dashboard to analyze various aspects o
 
 
 ## Conclusion
-This Power BI dashboard project provides valuable insights that can help improve patient care and operational efficiency. Feel free to explore the dashboard and use it as a basis for further analysis and improvements.
+This Power BI dashboard project provides valuable insights that can help improve patient care and operational efficiency.
